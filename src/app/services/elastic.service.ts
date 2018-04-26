@@ -1,11 +1,18 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+import {ElasticServer} from '../models/server';
+import {HttpClient} from '@angular/common/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ElasticService {
   api: string = 'http://localhost:9200';
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+  }
 
-  get
+  getServerInfo(): Observable<ElasticServer> {
+    return this.http.get(this.api).map(response => new ElasticServer().deserialize(response));
+  }
 
 }
