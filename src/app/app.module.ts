@@ -11,6 +11,7 @@ import {IndexComponent} from './index/index.component';
 import {ClusterComponent} from './cluster/cluster.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ElasticService} from './services/elastic.service';
+import { LoaderComponent } from './loader/loader.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {ElasticService} from './services/elastic.service';
     AppComponent,
     HomeComponent,
     IndexComponent,
-    ClusterComponent
+    ClusterComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
