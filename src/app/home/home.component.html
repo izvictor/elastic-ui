@@ -1,4 +1,45 @@
 <eui-loader [waitingObject]="this.elasticServer"></eui-loader>
-<div *ngIf="this.elasticServer">
-  {{elasticServer?.name}}
+<div class="row">
+  <div class="jumbotron" *ngIf="this.elasticServer" style="margin: auto">
+    <h1 class="display-4 text-center">Welcome to Elasticsearch UI</h1>
+    <p class="lead">This tool will allow you to manage the elastic search instance on which you are connected</p>
+    <hr class="my-4">
+    <ul class="list-group">
+      <li class="list-group-item active"><h6>Server info</h6></li>
+      <li class="list-group-item"><h6>Server name: <span
+        class="badge badge-secondary">{{this.elasticServer.name}}</span></h6>
+      </li>
+      <li class="list-group-item"><h6>Cluster name: <span
+        class="badge badge-secondary">{{this.elasticServer.clusterName}}</span></h6>
+      </li>
+      <li class="list-group-item"><h6>Cluster UUID: <span
+        class="badge badge-secondary">{{this.elasticServer.clusterUUID}}</span></h6>
+      </li>
+      <li class="list-group-item"><h6>Tagline: <span
+        class="badge badge-secondary">{{this.elasticServer.tagline}}</span></h6>
+      </li>
+    </ul>
+    <br>
+    <ul class="list-group">
+      <li class="list-group-item active"><h6>Server version</h6></li>
+      <li class="list-group-item"><h6>Number: <span
+        class="badge badge-secondary">{{this.elasticServer.version.number}}</span></h6>
+      </li>
+      <li class="list-group-item"><h6>Build hash: <span
+        class="badge badge-secondary">{{this.elasticServer.version.buildHash}}</span></h6>
+      </li>
+      <li class="list-group-item"><h6>Build date: <span
+        class="badge badge-secondary">{{this.elasticServer.version.buildDate}}</span></h6>
+      </li>
+      <li class="list-group-item"><h6>Build snapshot: <span
+        class="badge badge-secondary">{{this.elasticServer.version.buildSnapshot}}</span></h6>
+      </li>
+      <li class="list-group-item"><h6>Minimum Wire Compatibility Version: <span
+        class="badge badge-secondary">{{this.elasticServer.version.minimumWireCompatibilityVersion}}</span></h6>
+      </li>
+      <li class="list-group-item"><h6>Minimum Index Compatibility Version: <span
+        class="badge badge-secondary">{{this.elasticServer.version.minimumWireCompatibilityVersion}}</span></h6>
+      </li>
+    </ul>
+  </div>
 </div>

@@ -10,7 +10,20 @@
       </li>
     </ul>
   </div>
+  <div class="pull-right">
+    <form class="form-inline">
+      <label class="sr-only" for="url">Username</label>
+      <div class="input-group mb-2 mr-sm-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fa fa-link"></i></div>
+        </div>
+        <input type="text" class="form-control col-lg-10" id="url" placeholder="URL">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-refresh"></i></button>
+    </form>
+  </div>
 </nav>
-<div class="container">
-    <router-outlet></router-outlet>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
 </div>
