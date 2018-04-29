@@ -4,6 +4,7 @@
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
 @import "~@progress/kendo-theme-bootstrap/scss/all";
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 .row {
   padding: 5px;

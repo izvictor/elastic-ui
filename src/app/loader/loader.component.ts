@@ -7,7 +7,8 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class LoaderComponent implements OnInit {
 
-  @Input() waitingObject: any;
+
+  @Input() busy: boolean;
 
   constructor() {
   }

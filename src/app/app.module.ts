@@ -11,7 +11,11 @@ import {IndexComponent} from './index/index.component';
 import {ClusterComponent} from './cluster/cluster.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ElasticService} from './services/elastic.service';
-import { LoaderComponent } from './loader/loader.component';
+import {LoaderComponent} from './loader/loader.component';
+import {HeaderComponent} from './header/header.component';
+import {FormsModule} from '@angular/forms';
+import {ViewsService} from './services/views.service';
+import {MatSnackBarModule} from '@angular/material';
 
 
 @NgModule({
@@ -20,7 +24,8 @@ import { LoaderComponent } from './loader/loader.component';
     HomeComponent,
     IndexComponent,
     ClusterComponent,
-    LoaderComponent
+    LoaderComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -28,8 +33,10 @@ import { LoaderComponent } from './loader/loader.component';
     ButtonsModule,
     EuiRoutingModule,
     HttpClientModule,
+    FormsModule,
+    MatSnackBarModule
   ],
-  providers: [ElasticService],
+  providers: [ElasticService, ViewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
