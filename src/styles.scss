@@ -6,6 +6,10 @@ $fa-font-path: "~font-awesome/fonts";
 @import "~@progress/kendo-theme-bootstrap/scss/all";
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+.loader-row {
+  height: 10px;
+}
+
 .row {
   padding: 5px;
 }
@@ -13,7 +17,8 @@ $fa-font-path: "~font-awesome/fonts";
 .jumbotron {
   padding: 2rem 2rem;
 }
-.list-group-item{
+
+.list-group-item {
   padding: 0.5rem 0.5rem;
 
 }

@@ -3,7 +3,7 @@ import {ElasticService} from '../services/elastic.service';
 import {ElasticServer} from '../models/server';
 import {ViewsService} from '../services/views.service';
 import {Subscription} from 'rxjs/Subscription';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar, MatSnackBarVerticalPosition} from '@angular/material';
 
 @Component({
   selector: 'eui-home',
@@ -30,8 +30,9 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.elasticServer = s;
       }, e => {
         this.viewService.isBusy = false;
-        this.snackBar.open('Error quering server at URL : ' + this.elasticService.api, null, {
-          duration: 2000,
+        this.snackBar.open('Error quering server at URL : ' + this.elasticService.api, 'CLOSE', {
+          verticalPosition: 'top'
+
         });
         this.elasticServer = null;
 

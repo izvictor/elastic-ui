@@ -23,8 +23,10 @@ export class HeaderComponent implements OnInit {
   }
 
   onSubmit() {
-    this.elasticService.api = this.elasticSearchUrl;
-    this.viewService.isBusy = true;
-    this.viewService.loadServerInformation();
+    if (this.elasticSearchUrl) {
+      this.elasticService.api = this.elasticSearchUrl;
+      this.viewService.isBusy = true;
+      this.viewService.loadServerInformation();
+    }
   }
 }

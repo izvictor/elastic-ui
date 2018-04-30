@@ -8,20 +8,19 @@
       <li class="nav-item" [routerLinkActive]="'active'">
         <a class="nav-link" [routerLink]="['/index']"><i class="fa fa-database"></i> Indexes</a>
       </li>
-      <li class="nav-item">
-        <eui-loader [busy]="this.isBusy()"></eui-loader>
-      </li>
     </ul>
   </div>
-  <form (ngSubmit)="onSubmit()" class="form-inline">
-    <label class="sr-only" for="url">Username</label>
+  <form (ngSubmit)="onSubmit()" class="form-inline" #urlForm="ngForm">
     <div class="input-group mb-2 mr-sm-2">
       <div class="input-group-prepend">
         <div class="input-group-text"><i class="fa fa-link"></i></div>
       </div>
-      <input type="text" name="url" [(ngModel)]="elasticSearchUrl" class="form-control col-lg-10" id="url"
-             placeholder="Elasticsearch URL">
+      <input type="text" required name="url" [(ngModel)]="elasticSearchUrl" class="form-control col-lg-10" id="url"
+             placeholder="Elasticsearch URL" pattern="https?://.+" >
     </div>
-    <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-refresh"></i></button>
+    <button type="submit" class="btn btn-primary mb-2" [disabled]="!urlForm.form.valid"><i class="fa fa-refresh"></i></button>
   </form>
 </nav>
+<div class="loader-row">
+  <eui-loader [busy]="this.isBusy()"></eui-loader>
+</div>
